@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>4in-tech GA Mockup for Tutorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  font-family: 'Roboto', 'Google Sans', Arial, sans-serif;
+  color: #202124;
+  background: #fff;
+  font-size: 13px;
+  line-height: 1.4;
+  overflow-x: auto;
+}
+body { min-width: 1200px; }
+
+/* Tutorial banner */
+.tutorial-banner {
+  background: linear-gradient(90deg, #ff6f00 0%, #ff8f00 100%);
+  color: #fff;
+  padding: 8px 20px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.tutorial-banner .material-icons { font-size: 18px; }
+
+/* Top bar */
+.topbar {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 56px;
+  border-bottom: 1px solid #e8eaed;
+  background: #fff;
+}
+.topbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 16px;
+}
+.topbar .logo-icon {
+  width: 24px; height: 24px;
+}
+.topbar .logo-text {
+  font-family: 'Google Sans', sans-serif;
+  color: #5f6368;
+  font-size: 18px;
+  font-weight: 400;
+}
+.topbar .account-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+  color: #5f6368;
+  margin-right: 8px;
+  line-height: 1.3;
+}
+.topbar .account-info .breadcrumb { color: #5f6368; }
+.topbar .property-selector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #202124;
+  font-weight: 500;
+}
+.topbar .property-selector:hover { background: #f1f3f4; }
+.topbar .search {
+  flex: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  background: #f1f3f4;
+  border-radius: 8px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #5f6368;
+  font-size: 14px;
+}
+.topbar .search .material-icons { font-size: 20px; }
+.topbar .right-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 16px;
+}
+.topbar .right-icons .icon-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #5f6368;
+  cursor: pointer;
+}
+.topbar .right-icons .icon-btn:hover { background: #f1f3f4; }
+.topbar .avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: #4285f4;
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+/* Main container */
+.app {
+  display: flex;
+  min-height: calc(100vh - 56px - 34px);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 56px;
+  background: #fff;
+  border-right: 1px solid #e8eaed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8px;
+  flex-shrink: 0;
+}
+.sidebar .side-icon {
+  width: 48px; height: 48px;
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  color: #5f6368;
+  cursor: pointer;
+  margin-bottom: 4px;
+  position: relative;
+}
+.sidebar .side-icon:hover { background: #f1f3f4; }
+.sidebar .side-icon.active {
+  color: #1a73e8;
+}
+.sidebar .side-icon.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 3px; height: 32px;
+  background: #1a73e8;
+  border-radius: 0 2px 2px 0;
+}
+.sidebar .side-icon.active .material-icons { background: #e8f0fe; border-radius: 50%; padding: 6px; }
+.sidebar .settings-bottom {
+  margin-top: auto;
+  margin-bottom: 12px;
+}
+
+/* Secondary nav */
+.subnav {
+  width: 240px;
+  background: #fff;
+  border-right: 1px solid #e8eaed;
+  padding: 16px 0;
+  flex-shrink: 0;
+}
+.subnav .nav-group-title {
+  padding: 8px 20px;
+  font-size: 12px;
+  color: #5f6368;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.subnav .nav-group-title .material-icons { font-size: 18px; }
+.subnav .nav-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 20px 8px 36px;
+  font-size: 13px;
+  color: #202124;
+  cursor: pointer;
+  border-radius: 0 20px 20px 0;
+  margin-right: 8px;
+  text-decoration: none;
+  gap: 12px;
+}
+.subnav .nav-item:hover { background: #f1f3f4; }
+.subnav .nav-item.active {
+  background: #e8f0fe;
+  color: #1967d2;
+  font-weight: 500;
+}
+.subnav .nav-top-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #202124;
+  cursor: pointer;
+  border-radius: 0 20px 20px 0;
+  margin-right: 8px;
+}
+.subnav .nav-top-item:hover { background: #f1f3f4; }
+.subnav .nav-top-item .material-icons { color: #5f6368; font-size: 20px; }
+.subnav .nav-expand {
+  padding: 4px 20px;
+  font-size: 12px;
+  color: #5f6368;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-top: 8px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.subnav .nav-expand:hover { background: #f1f3f4; }
+.subnav hr { border: 0; border-top: 1px solid #e8eaed; margin: 8px 0; }
+
+/* Main content */
+.content {
+  flex: 1;
+  padding: 24px 32px;
+  background: #fff;
+  min-width: 0;
+}
+
+/* Page header */
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #202124;
+}
+.page-title .edit-icon {
+  color: #1a73e8;
+  font-size: 18px;
+  cursor: pointer;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.date-range {
+  font-size: 13px;
+  color: #202124;
+  text-align: right;
+  line-height: 1.5;
+}
+.date-range .label { color: #5f6368; font-size: 11px; }
+.date-range .material-icons { font-size: 16px; vertical-align: middle; color: #5f6368; }
+.header-icon-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #5f6368;
+  cursor: pointer;
+}
+.header-icon-btn:hover { background: #f1f3f4; }
+.header-icon-btn.insights { color: #1a73e8; }
+
+/* Filter chips row */
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid #dadce0;
+  border-radius: 16px;
+  font-size: 13px;
+  color: #202124;
+  background: #fff;
+  cursor: pointer;
+}
+.chip:hover { background: #f8f9fa; }
+.chip .material-icons { font-size: 16px; color: #5f6368; }
+.chip.filter-chip {
+  background: #e8f0fe;
+  border-color: #e8f0fe;
+  color: #174ea6;
+}
+.chip.filter-chip .chip-badge {
+  background: #1a73e8;
+  color: #fff;
+  border-radius: 50%;
+  width: 18px; height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 500;
+}
+.chip.add-filter {
+  color: #5f6368;
+  border-style: dashed;
+}
+
+/* Table card */
+.table-card {
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+.table-card .table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.search-box {
+  position: relative;
+  width: 280px;
+}
+.search-box input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+}
+.search-box input:focus { border-color: #1a73e8; }
+.search-box .material-icons {
+  position: absolute;
+  left: 10px; top: 50%;
+  transform: translateY(-50%);
+  color: #5f6368;
+  font-size: 18px;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: #5f6368;
+}
+.pagination select {
+  padding: 4px 24px 4px 8px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: inherit;
+  background: #fff;
+  cursor: pointer;
+}
+.pagination .page-input {
+  width: 40px;
+  padding: 4px 8px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: center;
+  font-family: inherit;
+}
+.pagination .nav-btn {
+  width: 28px; height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #5f6368;
+}
+.pagination .nav-btn:hover { background: #f1f3f4; }
+
+/* Data table */
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+table.data thead th {
+  text-align: right;
+  padding: 10px 12px;
+  color: #5f6368;
+  font-weight: 500;
+  font-size: 12px;
+  border-bottom: 1px solid #e8eaed;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+table.data thead th.left { text-align: left; }
+table.data thead th .model-header {
+  text-align: center;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e8eaed;
+  margin-bottom: 6px;
+  font-size: 11px;
+  text-transform: none;
+  color: #5f6368;
+}
+table.data thead th .model-name {
+  color: #1a73e8;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+table.data thead th .model-name .material-icons { font-size: 16px; }
+table.data thead .col-dim {
+  text-align: left;
+  min-width: 180px;
+}
+table.data thead .col-sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+table.data thead .col-sort .material-icons { font-size: 14px; color: #1a73e8; }
+table.data tbody td {
+  padding: 10px 12px;
+  text-align: right;
+  border-bottom: 1px solid #f1f3f4;
+  color: #202124;
+  white-space: nowrap;
+}
+table.data tbody td.left { text-align: left; }
+table.data tbody td.rank {
+  text-align: left;
+  color: #5f6368;
+  width: 32px;
+  padding-right: 0;
+}
+table.data tbody tr:hover { background: #f8f9fa; }
+table.data tr.total-row td {
+  font-weight: 500;
+  border-bottom: 1px solid #e8eaed;
+  padding-bottom: 14px;
+}
+table.data tr.total-row td .percent {
+  display: block;
+  color: #5f6368;
+  font-size: 11px;
+  font-weight: 400;
+  margin-top: 2px;
+}
+table.data tr.subtotal td {
+  font-size: 11px;
+  color: #5f6368;
+  padding-top: 0;
+  padding-bottom: 8px;
+  font-weight: 400;
+}
+table.data tr.subtotal td .change-up { color: #137333; }
+table.data tr.subtotal td .change-down { color: #d93025; }
+table.data .dim-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+table.data .link { color: #1a73e8; cursor: pointer; }
+table.data .link:hover { text-decoration: underline; }
+.channel-dim-cell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.channel-dim-cell .material-icons { font-size: 16px; color: #5f6368; }
+.plus-btn {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: #e8f0fe;
+  color: #1a73e8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* Model comparison specific */
+.model-group-headers {
+  display: grid;
+  grid-template-columns: 220px 1fr 1fr 160px;
+  gap: 0;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e8eaed;
+  margin-bottom: 0;
+}
+.change-up { color: #137333; }
+.change-down { color: #d93025; }
+.change-neutral { color: #202124; }
+
+/* Charts section */
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.chart-card {
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+  padding: 20px;
+}
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.chart-metric-selector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #202124;
+  font-weight: 500;
+  cursor: pointer;
+}
+.chart-metric-selector .dim { color: #5f6368; font-weight: 400; margin-left: 4px; }
+.chart-big-number {
+  font-size: 36px;
+  font-weight: 400;
+  color: #202124;
+  font-family: 'Google Sans', sans-serif;
+}
+.chart-big-number .unit { font-size: 16px; color: #5f6368; margin-left: 4px; }
+
+/* Bar chart */
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 8px;
+}
+.bar-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+  gap: 16px;
+}
+.bar-label { font-size: 13px; color: #202124; text-align: right; }
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.bar {
+  height: 10px;
+  border-radius: 1px;
+}
+.bar.dark { background: #1a73e8; }
+.bar.light { background: #aecbfa; }
+.bar-xaxis {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  padding-top: 8px;
+  color: #5f6368;
+  font-size: 11px;
+}
+.bar-xaxis-marks {
+  display: flex;
+  justify-content: space-between;
+}
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  font-size: 12px;
+  color: #5f6368;
+}
+.chart-legend .legend-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Line chart */
+.line-chart-wrap { position: relative; }
+.line-chart-wrap svg { width: 100%; height: 240px; display: block; }
+.line-yaxis {
+  position: absolute;
+  right: 0; top: 0; bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #5f6368;
+  text-align: right;
+  padding-left: 4px;
+}
+.line-xaxis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #5f6368;
+  padding: 4px 24px 0 0;
+}
+
+/* Footer */
+.footer {
+  padding: 12px 20px;
+  border-top: 1px solid #e8eaed;
+  background: #fff;
+  font-size: 11px;
+  color: #5f6368;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Page switching */
+.page { display: none; flex: 1; min-width: 0; }
+.page.active { display: flex; }
+</style>
+</head>
+<body>
+
+<div class="tutorial-banner">
+  <span class="material-icons">warning_amber</span>
+  <span>4in-tech MOCKUP for TUTORIAL — This is a demonstration page, NOT the real Google Analytics</span>
+  <span class="material-icons">warning_amber</span>
+</div>
+
+<div class="topbar">
+  <div class="logo">
+    <svg class="logo-icon" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#F9AB00" d="M130 29v132c0 14.77 10.19 23 21 23 10 0 21-7 21-23V30c0-13.54-10-22-21-22s-21 9.33-21 21z"/>
+      <path fill="#E37400" d="M75 96v65c0 14.77 10.19 23 21 23 10 0 21-7 21-23V97c0-13.54-10-22-21-22s-21 9.33-21 21z"/>
+      <circle fill="#E37400" cx="41" cy="163" r="21"/>
+    </svg>
+    <span class="logo-text">Analytics</span>
+  </div>
+  <div class="account-info">
+    <span class="breadcrumb">All accounts &gt; Property name</span>
+  </div>
+  <div class="property-selector">
+    All Website Data
+    <span class="material-icons" style="font-size:18px;">arrow_drop_down</span>
+  </div>
+  <div class="search">
+    <span class="material-icons">search</span>
+    <span>Try searching "how to set up Analytics"</span>
+  </div>
+  <div class="right-icons">
+    <div class="icon-btn"><span class="material-icons">apps</span></div>
+    <div class="icon-btn"><span class="material-icons">help_outline</span></div>
+    <div class="icon-btn"><span class="material-icons">more_vert</span></div>
+    <div class="avatar">M</div>
+  </div>
+</div>
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="side-icon" data-page="acquisition" onclick="switchPage('acquisition')" title="Reports">
+      <span class="material-icons">bar_chart</span>
+    </div>
+    <div class="side-icon" data-page="attribution" onclick="switchPage('attribution')" title="Advertising">
+      <span class="material-icons">track_changes</span>
+    </div>
+    <div class="side-icon" title="Explore">
+      <span class="material-icons">insights</span>
+    </div>
+    <div class="side-icon" title="Configure">
+      <span class="material-icons">library_books</span>
+    </div>
+    <div class="side-icon settings-bottom" title="Admin">
+      <span class="material-icons">settings</span>
+    </div>
+  </div>
+
+  <!-- ====================== PAGE 1: Attribution / Model Comparison ====================== -->
+  <div class="page" id="page-attribution">
+
+    <div class="subnav">
+      <div class="nav-top-item">
+        <span class="material-icons">camera_alt</span>
+        <span>Advertising snapshot</span>
+      </div>
+      <div class="nav-group-title">
+        <span>Attribution</span>
+        <span class="material-icons">expand_less</span>
+      </div>
+      <a class="nav-item active" onclick="switchPage('attribution')">Model comparison</a>
+      <a class="nav-item">Conversion paths</a>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div class="page-title">
+          Model comparison
+          <span class="material-icons edit-icon">edit</span>
+        </div>
+        <div class="header-right">
+          <div class="date-range">
+            <div class="label">This week</div>
+            <div>Nov 9 - Nov 15, 2026 <span class="material-icons">arrow_drop_down</span></div>
+          </div>
+          <div class="header-icon-btn"><span class="material-icons">compare_arrows</span></div>
+          <div class="header-icon-btn"><span class="material-icons">share</span></div>
+          <div class="header-icon-btn insights"><span class="material-icons">auto_awesome</span></div>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <div class="chip">
+          7/7 conversion events selected
+          <span class="material-icons">arrow_drop_down</span>
+        </div>
+        <div class="chip filter-chip">
+          <span class="chip-badge">R</span>
+          Reporting = Conversion time
+        </div>
+        <div class="chip add-filter">
+          <span class="material-icons">add</span>
+          Add filter
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-toolbar">
+          <div class="search-box">
+            <span class="material-icons">search</span>
+            <input type="text" placeholder="Search">
+          </div>
+          <div class="pagination">
+            <span>Rows per page:</span>
+            <select><option>25</option><option>50</option><option>100</option></select>
+            <span>Go to:</span>
+            <input class="page-input" value="1">
+            <span>1-9 of 9</span>
+            <div class="nav-btn"><span class="material-icons" style="font-size:18px;">chevron_left</span></div>
+            <div class="nav-btn"><span class="material-icons" style="font-size:18px;">chevron_right</span></div>
+          </div>
+        </div>
+
+        <table class="data">
+          <thead>
+            <tr>
+              <th class="left" rowspan="2" style="width:220px;vertical-align:bottom;padding-bottom:16px;">
+                <div style="color:#5f6368;font-size:12px;">Channel <span class="material-icons" style="font-size:14px;vertical-align:middle;">arrow_drop_down</span>
+                <span class="plus-btn">+</span>
+                </div>
+              </th>
+              <th colspan="2" style="text-align:center;padding-bottom:4px;border-bottom:none;">
+                <div style="font-size:11px;color:#5f6368;font-weight:400;">Attribution model (non-direct)</div>
+                <div class="model-name"><span class="material-icons">insights</span>Cross-channel last click <span class="material-icons">arrow_drop_down</span></div>
+              </th>
+              <th colspan="2" style="text-align:center;padding-bottom:4px;border-bottom:none;">
+                <div style="font-size:11px;color:#5f6368;font-weight:400;">Attribution model (non-direct)</div>
+                <div class="model-name"><span class="material-icons">insights</span>Cross-channel linear <span class="material-icons">arrow_drop_down</span></div>
+              </th>
+              <th colspan="2" style="text-align:center;padding-bottom:4px;border-bottom:none;color:#5f6368;font-size:12px;font-weight:500;">
+                % Change
+              </th>
+            </tr>
+            <tr>
+              <th><span class="col-sort"><span class="material-icons">arrow_downward</span>Conversions</span></th>
+              <th>Revenue</th>
+              <th>Conversions</th>
+              <th>Revenue</th>
+              <th>Conversions</th>
+              <th>Revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="total-row">
+              <td class="left"></td>
+              <td>65,321<span class="percent">100% of total</span></td>
+              <td>$1,567,710.48<span class="percent">100% of total</span></td>
+              <td>65,321.0<span class="percent">100% of total</span></td>
+              <td>$1,567,710.48<span class="percent">100% of total</span></td>
+              <td>0.0%<span class="percent">Average</span></td>
+              <td>0.0%<span class="percent">Average</span></td>
+            </tr>
+            <tr>
+              <td class="rank">1</td>
+              <td class="left"><span class="link">Paid search</span></td>
+              <td>24,283</td><td>$582,792.00</td>
+              <td>24,431.1</td><td>$586,347.03</td>
+              <td class="change-up">0.6%</td><td class="change-up">$3,555.03</td>
+            </tr>
+            <tr>
+              <td class="rank">2</td>
+              <td class="left"><span class="link">Display</span></td>
+              <td>14,570</td><td>$349,675.20</td>
+              <td>14,424.1</td><td>$346,178.45</td>
+              <td class="change-down">-1.0%</td><td class="change-down">-$3,496.75</td>
+            </tr>
+            <tr>
+              <td class="rank">3</td>
+              <td class="left"><span class="link">Organic search</span></td>
+              <td>9,713</td><td>$233,116.80</td>
+              <td>9,907.5</td><td>$237,779.14</td>
+              <td class="change-up">2.0%</td><td class="change-up">$4,662.34</td>
+            </tr>
+            <tr>
+              <td class="rank">4</td>
+              <td class="left"><span class="link">Direct</span></td>
+              <td>6,071</td><td>$145,698.00</td>
+              <td>6,070.8</td><td>$145,698.00</td>
+              <td>0.0%</td><td>$0.00</td>
+            </tr>
+            <tr>
+              <td class="rank">5</td>
+              <td class="left"><span class="link">Paid social</span></td>
+              <td>4,857</td><td>$116,558.40</td>
+              <td>4,662.3</td><td>$111,896.06</td>
+              <td class="change-down">-4.0%</td><td class="change-down">-$4,662.34</td>
+            </tr>
+            <tr>
+              <td class="rank">6</td>
+              <td class="left"><span class="link">Email</span></td>
+              <td>2,914</td><td>$69,935.04</td>
+              <td>2,972.2</td><td>$71,333.74</td>
+              <td class="change-up">2.0%</td><td class="change-up">$1,398.70</td>
+            </tr>
+            <tr>
+              <td class="rank">7</td>
+              <td class="left"><span class="link">Video</span></td>
+              <td>1,943</td><td>$46,623.36</td>
+              <td>1,903.8</td><td>$45,690.89</td>
+              <td class="change-down">-2.0%</td><td class="change-down">-$932.47</td>
+            </tr>
+            <tr>
+              <td class="rank">8</td>
+              <td class="left"><span class="link">Organic social</span></td>
+              <td>728</td><td>$17,483.76</td>
+              <td>699.4</td><td>$16,784.41</td>
+              <td class="change-down">-4.0%</td><td class="change-down">-$699.35</td>
+            </tr>
+            <tr>
+              <td class="rank">9</td>
+              <td class="left"><span class="link">Affiliate</span></td>
+              <td>243</td><td>$5,827.92</td>
+              <td>250.1</td><td>$6,002.76</td>
+              <td class="change-up">3.0%</td><td class="change-up">$174.84</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="color:#5f6368;font-size:12px;padding:8px 0;">
+        Tip: Click <strong>User acquisition</strong> on the left sidebar (bar chart icon) to switch to the acquisition report.
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================== PAGE 2: User Acquisition ====================== -->
+  <div class="page active" id="page-acquisition">
+
+    <div class="subnav">
+      <div class="nav-top-item">
+        <span class="material-icons">assessment</span>
+        <span>Reports snapshot</span>
+      </div>
+      <div class="nav-top-item">
+        <span class="material-icons">radio_button_checked</span>
+        <span>Realtime</span>
+      </div>
+      <hr>
+      <div class="nav-group-title">
+        <span>Life cycle</span>
+        <span class="material-icons">expand_less</span>
+      </div>
+      <div class="nav-expand">
+        <span><span class="material-icons" style="font-size:16px;vertical-align:middle;">expand_more</span> Acquisition</span>
+      </div>
+      <a class="nav-item">Overview</a>
+      <a class="nav-item active">User acquisition</a>
+      <a class="nav-item">Traffic acquisition</a>
+      <div class="nav-expand">
+        <span><span class="material-icons" style="font-size:16px;vertical-align:middle;">chevron_right</span> Engagement</span>
+      </div>
+      <div class="nav-expand">
+        <span><span class="material-icons" style="font-size:16px;vertical-align:middle;">chevron_right</span> Monetization</span>
+      </div>
+      <div class="nav-top-item" style="padding-left:20px;">
+        <span>Retention</span>
+      </div>
+      <hr>
+      <div class="nav-group-title">
+        <span>User</span>
+        <span class="material-icons">expand_less</span>
+      </div>
+      <div class="nav-expand">
+        <span><span class="material-icons" style="font-size:16px;vertical-align:middle;">chevron_right</span> Demographics</span>
+      </div>
+      <div class="nav-expand">
+        <span><span class="material-icons" style="font-size:16px;vertical-align:middle;">chevron_right</span> Tech</span>
+      </div>
+      <hr>
+      <div class="nav-top-item">
+        <span class="material-icons">folder_open</span>
+        <span>Library</span>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-header">
+        <div class="page-title">
+          User acquisition
+          <span class="material-icons edit-icon">edit</span>
+        </div>
+        <div class="header-right">
+          <div class="date-range">
+            <div class="label">This week</div>
+            <div>Nov 9 - Nov 15, 2026 <span class="material-icons">arrow_drop_down</span></div>
+            <div class="label" style="margin-top:4px;">Compare: <span style="color:#202124;">Nov 2 - Nov 8, 2026</span></div>
+          </div>
+          <div class="header-icon-btn"><span class="material-icons">compare_arrows</span></div>
+          <div class="header-icon-btn"><span class="material-icons">share</span></div>
+          <div class="header-icon-btn insights"><span class="material-icons">auto_awesome</span></div>
+          <div class="header-icon-btn"><span class="material-icons">edit</span></div>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <div class="chip filter-chip">
+          <span class="chip-badge">A</span>
+          All users
+        </div>
+        <div class="chip add-filter">
+          <span class="material-icons">add</span>
+          Add comparison
+        </div>
+      </div>
+
+      <div class="charts-row">
+        <!-- Bar chart -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-metric-selector">
+              Users <span class="material-icons">arrow_drop_down</span> <span class="dim">by Channels</span>
+            </div>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-row">
+              <div class="bar-label">Referral</div>
+              <div class="bar-group">
+                <div class="bar dark" style="width:95%;"></div>
+                <div class="bar light" style="width:50%;"></div>
+              </div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">Direct</div>
+              <div class="bar-group">
+                <div class="bar dark" style="width:78%;"></div>
+                <div class="bar light" style="width:55%;"></div>
+              </div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">Organic Search</div>
+              <div class="bar-group">
+                <div class="bar dark" style="width:62%;"></div>
+                <div class="bar light" style="width:82%;"></div>
+              </div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">Email</div>
+              <div class="bar-group">
+                <div class="bar dark" style="width:42%;"></div>
+                <div class="bar light" style="width:40%;"></div>
+              </div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">Other</div>
+              <div class="bar-group">
+                <div class="bar dark" style="width:40%;"></div>
+                <div class="bar light" style="width:50%;"></div>
+              </div>
+            </div>
+            <div class="bar-xaxis">
+              <div></div>
+              <div class="bar-xaxis-marks">
+                <span>0</span><span>200K</span><span>400K</span><span>600K</span><span>800K</span><span>1M</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-legend">
+            <span><span class="legend-dot" style="background:#1a73e8;"></span>This week</span>
+            <span><span class="legend-dot" style="background:#aecbfa;"></span>Last period</span>
+          </div>
+        </div>
+
+        <!-- Line chart -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-metric-selector">
+              Users <span class="material-icons">arrow_drop_down</span>
+            </div>
+          </div>
+          <div class="chart-big-number">828.5K <span class="unit">/day</span></div>
+          <div class="line-chart-wrap" style="margin-top:20px;">
+            <svg viewBox="0 0 600 240" preserveAspectRatio="none">
+              <!-- gridlines -->
+              <line x1="0" y1="40" x2="580" y2="40" stroke="#e8eaed" stroke-width="1"/>
+              <line x1="0" y1="100" x2="580" y2="100" stroke="#e8eaed" stroke-width="1"/>
+              <line x1="0" y1="160" x2="580" y2="160" stroke="#e8eaed" stroke-width="1"/>
+              <line x1="0" y1="220" x2="580" y2="220" stroke="#e8eaed" stroke-width="1"/>
+              <!-- Last period (dashed) -->
+              <polyline points="20,80 120,110 220,180 320,150 420,70 520,30" fill="none" stroke="#1a73e8" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
+              <!-- This week (solid) -->
+              <polyline points="20,100 120,140 220,200 320,170 420,110 520,50" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+              <!-- y-axis labels -->
+              <text x="585" y="44" fill="#5f6368" font-size="10" font-family="Roboto">2M</text>
+              <text x="585" y="104" fill="#5f6368" font-size="10" font-family="Roboto">1.5M</text>
+              <text x="585" y="164" fill="#5f6368" font-size="10" font-family="Roboto">1M</text>
+              <text x="585" y="224" fill="#5f6368" font-size="10" font-family="Roboto">500K</text>
+              <text x="585" y="238" fill="#5f6368" font-size="10" font-family="Roboto">0</text>
+            </svg>
+            <div class="line-xaxis">
+              <span>Nov 9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>Nov 15</span>
+            </div>
+          </div>
+          <div class="chart-legend">
+            <span><span class="legend-dot" style="background:#1a73e8;"></span>This week</span>
+            <span><span class="legend-dot" style="background:#aecbfa;border:1px dashed #1a73e8;"></span>Last period</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-toolbar">
+          <div class="search-box">
+            <span class="material-icons">search</span>
+            <input type="text" placeholder="Search">
+          </div>
+          <div class="pagination">
+            <span>Rows per page:</span>
+            <select><option>20</option><option>50</option></select>
+            <span>1 of 8</span>
+            <div class="nav-btn"><span class="material-icons" style="font-size:18px;">chevron_left</span></div>
+            <div class="nav-btn"><span class="material-icons" style="font-size:18px;">chevron_right</span></div>
+          </div>
+        </div>
+
+        <table class="data">
+          <thead>
+            <tr>
+              <th class="left" style="width:180px;">
+                Channel <span class="material-icons" style="font-size:14px;vertical-align:middle;">arrow_drop_down</span>
+                <span class="plus-btn">+</span>
+              </th>
+              <th><span class="col-sort">Users <span class="material-icons">arrow_downward</span></span></th>
+              <th>Sessions</th>
+              <th>Engaged<br>Sessions</th>
+              <th>Engaged<br>Time</th>
+              <th>Engaged Sessions<br>per User</th>
+              <th>Engagement<br>Rate</th>
+              <th><u>Events</u>:<br>All Events</th>
+              <th><u>Conversions</u>:<br>All Conversions</th>
+              <th>Revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="total-row">
+              <td class="left"></td>
+              <td>75,707<span class="percent">vs. 68,930</span></td>
+              <td>149,002<span class="percent">vs. 10,392</span></td>
+              <td>115,707<span class="percent">vs. 117,930</span></td>
+              <td>3 m 34 s<span class="percent">vs. 3 m 20 s</span></td>
+              <td>42<span class="percent">vs. 41</span></td>
+              <td>33.3%<span class="percent">vs. 42.2%</span></td>
+              <td>149,002<span class="percent">vs. 10,392</span></td>
+              <td>5,707<span class="percent">vs. 68,930</span></td>
+              <td>$11,298,390<span class="percent">vs. $11,382,492</span></td>
+            </tr>
+            <tr class="subtotal">
+              <td class="left"><span style="display:inline-flex;align-items:center;gap:4px;"><span class="material-icons" style="font-size:12px;">arrow_downward</span>SHOW CURRENT DATE...</span></td>
+              <td class="change-down">↓ 28.25%</td>
+              <td class="change-up">↑ 28.56%</td>
+              <td class="change-down">↓ 14.23%</td>
+              <td class="change-up">↑ 13.89%</td>
+              <td class="change-up">↑ 2.43%</td>
+              <td class="change-down">↓ 14.23%</td>
+              <td class="change-up">↑ 28.56%</td>
+              <td class="change-down">↓ 28.25%</td>
+              <td class="change-down">↓ 28.25%</td>
+            </tr>
+            <tr>
+              <td class="rank">1.</td>
+              <td class="left"><span class="link">Direct</span></td>
+              <td>29,016</td><td>19,016</td><td>6,016</td><td>3 m 39 s</td><td>659</td><td>6.6%</td><td>19,016</td><td>9366</td><td>$1,619,166</td>
+            </tr>
+            <tr>
+              <td class="rank">2.</td>
+              <td class="left"><span class="link">Email</span></td>
+              <td>15,966</td><td>11,966</td><td>3,966</td><td>3 m 19 s</td><td>283</td><td>9.6%</td><td>11,966</td><td>8068</td><td>$8,028,400</td>
+            </tr>
+            <tr>
+              <td class="rank">3.</td>
+              <td class="left"><span class="link">Web Search</span></td>
+              <td>12,680</td><td>10,680</td><td>1,680</td><td>3 m 19 s</td><td>955</td><td>7.0%</td><td>10,680</td><td>2143</td><td>$1,195,106</td>
+            </tr>
+            <tr>
+              <td class="rank">4.</td>
+              <td class="left"><span class="link">Referral</span></td>
+              <td>10,811</td><td>9,811</td><td>1,111</td><td>3 m 19 s</td><td>669</td><td>7.3%</td><td>9,811</td><td>9231</td><td>$9,575,131</td>
+            </tr>
+            <tr>
+              <td class="rank">5.</td>
+              <td class="left"><span class="link">Social</span></td>
+              <td>9,813</td><td>5,813</td><td>813</td><td>2 m 34 s</td><td>981</td><td>6.9%</td><td>5,813</td><td>6714</td><td>$1,057,440</td>
+            </tr>
+            <tr>
+              <td class="rank">6.</td>
+              <td class="left"><span class="link">Other</span></td>
+              <td>4,415</td><td>2,415</td><td>415</td><td>3 m 19 s</td><td>331</td><td>7.0%</td><td>2,415</td><td>6861</td><td>$4,553,377</td>
+            </tr>
+            <tr>
+              <td class="rank">7.</td>
+              <td class="left"><span class="link">Organic Search</span></td>
+              <td>4,415</td><td>2,415</td><td>415</td><td>3 m 19 s</td><td>331</td><td>7.0%</td><td>2,415</td><td>6861</td><td>$4,553,377</td>
+            </tr>
+            <tr>
+              <td class="rank">8.</td>
+              <td class="left"><span class="link">Not Set</span></td>
+              <td>2,515</td><td>2,415</td><td>415</td><td>3 m 19 s</td><td>331</td><td>7.0%</td><td>2,415</td><td>6861</td><td>$1,284,502</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="color:#5f6368;font-size:12px;padding:8px 0;">
+        Tip: Click the <strong>target icon</strong> (Attribution) on the left sidebar to switch to Model comparison.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <span>4in-tech MOCKUP — All data is fabricated for tutorial / demo purposes only. Not affiliated with Google.</span>
+  <span>Mockup v1.0</span>
+</div>
+
+<script>
+function switchPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.sidebar .side-icon').forEach(i => i.classList.remove('active'));
+  const activeIcon = document.querySelector('.sidebar .side-icon[data-page="' + page + '"]');
+  if (activeIcon) activeIcon.classList.add('active');
+  window.scrollTo(0, 0);
+}
+// Default active state
+switchPage('acquisition');
+</script>
+
+</body>
+</html>
